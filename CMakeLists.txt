@@ -38,15 +38,15 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 99)
 
 # 编译参数 一般不用改
-add_compile_options(-march=rv32imacxw -mabi=ilp32 -msmall-data-limit=8 -msave-restore)
+add_compile_options(-march=rv32imac -mabi=ilp32 -msmall-data-limit=8 -msave-restore)
 add_compile_options(-fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common)
 
 # 链接参数
 add_link_options(-T ${CMAKE_SOURCE_DIR}/Ld/Link.ld)
-add_link_options(-march=rv32imacxw -mabi=ilp32 -nostartfiles -Xlinker --gc-sections -Wl,--print-memory-usage -Wl,-Map,${PROJECT_NAME}.map --specs=nano.specs --specs=nosys.specs)
+add_link_options(-march=rv32imac -mabi=ilp32 -nostartfiles -Xlinker --gc-sections -Wl,--print-memory-usage -Wl,-Map,${PROJECT_NAME}.map --specs=nano.specs --specs=nosys.specs)
 
 # 编译等级
-add_compile_options(-O3 -g)
+add_compile_options(-O2 -g)
 
 # 编译信息等级
 add_compile_options(-Wall)
